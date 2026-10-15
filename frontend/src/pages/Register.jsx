@@ -23,32 +23,47 @@ function Register() {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
+    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md p-8">
+      <h2 className="text-2xl font-bold text-slate-800 mb-6">Create Account</h2>
+      {error && (
+        <p className="bg-rose-50 text-rose-600 text-sm rounded-md px-4 py-2 mb-4">
+          {error}
+        </p>
+      )}
+      <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
-        <button type="submit">Register</button>
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-md transition"
+        >
+          Register
+        </button>
       </form>
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
+      <p className="text-sm text-slate-600 mt-4">
+        Already have an account?{" "}
+        <Link to="/login" className="text-indigo-600 font-medium hover:underline">
+          Login
+        </Link>
       </p>
     </div>
   );

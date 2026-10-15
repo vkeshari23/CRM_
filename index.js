@@ -14,8 +14,8 @@ app.get("/", (req, res) => {
   res.send("CRM API is running");
 });
 
-app.use("/api/auth", authRoutes);
-app.use("/api/enquiries", enquiryRoutes);
+app.use("/auth", authRoutes);
+app.use("/enquiries", enquiryRoutes);
 
 const PORT = process.env.PORT || 5000;
 
